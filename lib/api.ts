@@ -62,6 +62,7 @@ type Partner = {
     width: number;
     height: number;
   };
+  color: boolean;
   background: {
     url: string;
     fileName: string;
@@ -160,123 +161,6 @@ const Homepage = `
       pageTitle
       hero{
         title
-        cta{
-          title
-          url
-        }
-      }
-      partners{
-        heading
-        partnersCollection{
-          items{
-            title
-            description
-            logo{
-              url
-              fileName
-            }
-            background{
-              url
-              fileName
-            }
-          }
-          
-        }
-      }
-      services{
-        heading
-        servicesCollection{
-          items{
-            title
-            url
-          }
-        }
-      }
-      recentCaseStudies{
-        heading
-        caseStudiesCollection{
-          items{
-            title
-            description
-            image{
-              fileName
-              url
-            }
-            video{
-              fileName
-              url
-            }
-          }
-        }
-      }
-      techRadar{
-        title
-        description
-        cta{
-          title
-          url
-        }
-        video{
-          fileName
-          url
-        }
-        videoMobile{
-          title
-          url
-        }
-      }
-      whyUs{
-        heading
-        whyUsCollection{
-          items{
-            title
-            description
-          }
-        }
-      }
-      sayAboutUs{
-        heading
-        sayAboutUsCollection{
-          items{
-            name
-            description
-            jobTitle
-            image{
-              fileName
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-async function fetchGraphQL(query: string, preview = false): Promise<any> {
-  return fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${
-        preview ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN : process.env.CONTENTFUL_ACCESS_TOKEN
-      }`,
-    },
-    body: JSON.stringify({ query }),
-    next: { tags: ['posts'] },
-  }).then((response) => response.json());
-}
-
-function extractPage(fetchResponse: any): any {
-  return fetchResponse?.data?.homepage;
-}
-
-export async function getHomepage(isDraftMode: boolean): Promise<HomepageData> {
-  const entries = await fetchGraphQL(
-    `query {
-    homepage(id:"54VpAtNixKkrfPNeTzTh6D"){
-      pageTitle
-      hero{
-        title
         description
         image{
           title
@@ -307,6 +191,7 @@ export async function getHomepage(isDraftMode: boolean): Promise<HomepageData> {
               width
               height
             }
+            color
             background{
               url
               fileName
@@ -387,8 +272,28 @@ export async function getHomepage(isDraftMode: boolean): Promise<HomepageData> {
         }
       }
     }
-  }`,
-    isDraftMode
-  );
+  }
+`;
+
+async function fetchGraphQL(query: string, preview = false): Promise<any> {
+  return fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${
+        preview ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN : process.env.CONTENTFUL_ACCESS_TOKEN
+      }`,
+    },
+    body: JSON.stringify({ query }),
+    next: { tags: ['posts'] },
+  }).then((response) => response.json());
+}
+
+function extractPage(fetchResponse: any): any {
+  return fetchResponse?.data?.homepage;
+}
+
+export async function getHomepage(isDraftMode: boolean): Promise<HomepageData> {
+  const entries = await fetchGraphQL(`query ${Homepage}`, isDraftMode);
   return extractPage(entries);
 }
