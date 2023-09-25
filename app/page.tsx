@@ -2,6 +2,8 @@ import { draftMode } from 'next/headers';
 import { getHomepage } from '@/lib/api';
 import { Hero } from '@/app/components/Hero';
 import { Partners } from '@/app/components/Partners';
+import { Services } from '@/app/components/Services';
+import { RecentCaseStudies } from '@/app/components/RecentCaseStudies';
 
 export default async function Page() {
   const { isEnabled } = draftMode();
@@ -12,6 +14,8 @@ export default async function Page() {
     <>
       <Hero data={hero} />
       <Partners data={partners} />
+      <Services data={services} />
+      <RecentCaseStudies data={recentCaseStudies} />
     </>
   );
 }

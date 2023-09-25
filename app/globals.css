@@ -279,7 +279,7 @@ table {
 }
 
 /* =======PARTNERS========= */
-.partners h2 {
+.heading > h2 {
   font-size: 1.25vw;
   color: #767676;
   letter-spacing: -0.011em;
@@ -287,7 +287,7 @@ table {
   margin-top: 0;
   line-height: 100%;
   font-weight: 500;
-  margin-bottom: 8.62vh;
+  margin-bottom: 52px;
 }
 
 .clientsWrapper {
@@ -331,4 +331,92 @@ table {
   right: 0;
   overflow: hidden;
   transform: translate(-101%);
+}
+
+/* =======SERVIVES========= */
+.services {
+  margin-top: 180px;
+}
+
+.servicesContainer {
+  grid-column-gap: 7vw;
+  grid-row-gap: 10vh;
+  margin-bottom: 8.62vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: space-around;
+}
+
+.service {
+  color: #d9d9d9;
+  font-weight: 600;
+  line-height: 130%;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+.service a {
+  word-spacing: 9999px;
+}
+
+.linkContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkContainer a {
+  font-size: 1.39vw;
+  background-image: linear-gradient(90deg, #ffde00, #42f272);
+  padding: 0.99vw 1.39vw 0.725vw;
+  color: #000;
+  cursor: pointer;
+}
+
+/* =======CASE STUDIES========= */
+
+.caseStudies {
+  padding-right: 0;
+  margin-bottom: 8.62vh;
+  margin-top: 150px;
+}
+
+.swiperContainer {
+  overflow: hidden;
+}
+
+.swiperContainer img {
+  width: 85%;
+}
+
+.swiperHeader {
+  margin-bottom: 1.3vh;
+  font-size: 2.08vw;
+}
+
+.swiperContent {
+  background-image: linear-gradient(transparent, #111);
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.swiperContent p {
+  font-size: 1.25vw;
+  line-height: 145%;
+  position: relative;
+  text-align: center;
+}
+
+.swiper-slide {
+  overflow: hidden;
 }

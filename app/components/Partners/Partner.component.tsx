@@ -34,11 +34,18 @@ export const Partners = ({ data }: PartnersProps) => {
   const { heading, partnersCollection } = data;
   const { items } = partnersCollection;
   return (
-    <section className='container partners'>
+    <section className='container heading partners' data-aos='fade-in'>
       <h2>{heading}</h2>
       <div className='clientsWrapper'>
         {items.map(({ title, description, logo, background, color }) => (
-          <PartnerCard title={title} description={description} logo={logo} color={color} background={background} />
+          <PartnerCard
+            key={title}
+            title={title}
+            description={description}
+            logo={logo}
+            color={color}
+            background={background}
+          />
         ))}
       </div>
     </section>
