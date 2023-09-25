@@ -1,3 +1,279 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  color: #fff;
+  background-color: #111;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 20;
+  position: relative;
+}
+
+/* Define media queries */
+@media (min-width: 768px) {
+  /* Targeting tablet */
+  .container {
+    padding: 0 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Targeting laptop */
+  .container {
+    padding: 0 140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Targeting desktop */
+  .container {
+    padding: 0 9.72vw;
+  }
+}
+
+/* HOMEPAGE */
+.header {
+  z-index: 2;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.nav-item {
+  font-size: 1.11vw;
+  line-height: 125%;
+  margin: 0 20px;
+}
+
+.topBaner {
+  height: 8.6vh;
+  background-image: linear-gradient(90deg, #ffde00, #42f272);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topBaner a {
+  color: #000;
+  margin-left: 30px;
+  font-size: 18px;
+  line-height: 96%;
+}
+
+.topBaner a:hover {
+  text-decoration: underline;
+}
+
+.navigation {
+  display: flex;
+  z-index: 3;
+}
+
+.navigation .menuItem:last-of-type a {
+  padding: 0.7vw 1.04vw;
+  font-size: 1.11vw;
+  line-height: 125%;
+  transition: background-color 0.2s, color 0.2s;
+  background-color: #fff;
+  color: #000;
+}
+
+.menuItem .border {
+  transition: width 0.4s ease;
+  background-image: linear-gradient(90deg, #ffde00, #42f272);
+  width: 0%;
+  height: 2px;
+}
+
+.contentContainer {
+  z-index: -1;
+}
+
+/* =========HERO COMPONENT========= */
+
+.heroContainer {
+  position: relative;
+  min-height: 1210px;
+  z-index: 0;
+}
+
+.heroContent {
+}
+
+.heroContent img {
+  width: 830px;
+}
+
+.heroContainer > img {
+  position: absolute;
+  width: 100%;
+  bottom: 140px;
+  z-index: 1;
+}
+
+.content {
+  width: 60%;
+}
+
+.content h1 {
+  margin-bottom: 3.7vh;
+  font-size: 6.25vw;
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.content p {
+  max-width: 33vw;
+  margin-bottom: 3.44vh;
+  font-size: 1.39vw;
+  color: #c2c2c2;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.content a {
+  color: #111;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #ffde00, #42f272);
+  padding: 0.49vw 1.39vw 0.625vw;
+  font-size: 1.39vw;
+}
+
+.heroImageContainer {
+  width: 830px;
+  position: absolute;
+  top: -100px;
+  right: 0;
+}

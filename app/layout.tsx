@@ -1,59 +1,33 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
+'use client';
+import { useEffect } from 'react';
+import './globals.css';
+import { Roboto } from 'next/font/google';
+import { Header } from '@/app/components/Header';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
-export const metadata = {
-  title: `Next.js and ${CMS_NAME} Example`,
-  description: `This is a blog built with Next.js and ${CMS_NAME}.`,
-}
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
-})
+const roboto = Roboto({
+  weight: ['400', '700'],
+  preload: false,
+});
 
 function Footer() {
-  return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="container mx-auto px-5">
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Built with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
+  return <footer className='bg-accent-1 border-t border-accent-2'></footer>;
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang='en' className={roboto.className}>
       <body>
-        <section className="min-h-screen">
+        <Header />
+        <section>
           <main>{children}</main>
-          <Footer />
         </section>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

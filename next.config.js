@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    loader: 'custom',
-    formats: ['image/avif', 'image/webp'],
+    loader: 'akamai',
+    path: '',
+    domains: ['assets-global.website-files.com', 'images.ctfassets.net'],
   },
-}
+};
