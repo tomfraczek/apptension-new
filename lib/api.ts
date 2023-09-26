@@ -1,4 +1,4 @@
-type HomepageData = {
+export type HomepageData = {
   pageTitle: string;
   hero: {
     title: string;
@@ -53,7 +53,7 @@ type HomepageData = {
   };
 };
 
-type Partner = {
+export type Partner = {
   title: string;
   description: string;
   logo: {
@@ -71,12 +71,12 @@ type Partner = {
   };
 };
 
-type Service = {
+export type Service = {
   title: string;
   url: string;
 };
 
-type CaseStudy = {
+export type CaseStudy = {
   title: string;
   description: string;
   image: {
@@ -91,7 +91,7 @@ type CaseStudy = {
   };
 };
 
-type TechRadar = {
+export type TechRadar = {
   title: string;
   description: string;
   cta: {
@@ -108,12 +108,12 @@ type TechRadar = {
   };
 };
 
-type WhyUsItem = {
+export type WhyUsItem = {
   title: string;
   description: string;
 };
 
-type SayAboutUsItem = {
+export type SayAboutUsItem = {
   name: string;
   description: string;
   jobTitle: string;

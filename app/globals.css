@@ -452,3 +452,36 @@ table {
   margin-left: 59px;
   position: relative;
 }
+
+.techRadar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.techRadar h1 {
+  font-size: 3.125vw;
+  text-align: center;
+  margin-bottom: 2.6vh;
+}
+
+.techRadar p {
+  max-width: 28.5vw;
+  margin-bottom: 3.45vh;
+  font-size: 1.39vw;
+  color: #c2c2c2;
+  text-align: center;
+}
+
+.techRadar a {
+  font-size: 1.39vw;
+  background-image: linear-gradient(90deg, #ffde00, #42f272);
+  padding: 0.99vw 1.39vw 0.725vw;
+  color: #000;
+  cursor: pointer;
+}
+
+.techRadar video {
+  padding-top: 50px;
+}
