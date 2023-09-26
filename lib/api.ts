@@ -125,36 +125,6 @@ type SayAboutUsItem = {
   };
 };
 
-const POST_GRAPHQL_FIELDS = `
-  slug
-  title
-  coverImage {
-    url
-  }
-  date
-  author {
-    name
-    picture {
-      url
-    }
-  }
-  excerpt
-  content {
-    json
-    links {
-      assets {
-        block {
-          sys {
-            id
-          }
-          url
-          description
-        }
-      }
-    }
-  }
-`;
-
 const Homepage = `
   {
     homepage(id:"54VpAtNixKkrfPNeTzTh6D"){

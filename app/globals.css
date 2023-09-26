@@ -420,3 +420,35 @@ table {
 .swiper-slide {
   overflow: hidden;
 }
+
+/* =========FOOTER========== */
+.footer {
+  margin-top: 95px;
+  margin-bottom: 95px;
+}
+
+.topFooter {
+  grid-template-areas: '.Area-3 Area';
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template: '.Area-3 Area'/1fr auto auto auto;
+  grid-auto-columns: 1fr;
+  align-content: end;
+  display: grid;
+}
+
+.location {
+  height: 100%;
+  display: flex;
+  position: relative;
+  grid-area: Area-3;
+  justify-self: end;
+}
+
+.location a {
+  width: 22.8vw;
+  align-self: flex-end;
+  margin-top: 85px;
+  margin-left: 59px;
+  position: relative;
+}
