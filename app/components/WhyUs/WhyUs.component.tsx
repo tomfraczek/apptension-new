@@ -7,7 +7,7 @@ export const WhyUs = ({ heading, whyUsCollection }: WhyUsProps) => {
       <h2>{heading}</h2>
       <div className='whyContainer'>
         {items.map(({ title, description }) => (
-          <div className='whyContent'>
+          <div key={title} className='whyContent'>
             <h1>{title}</h1>
             <p>{description}</p>
           </div>

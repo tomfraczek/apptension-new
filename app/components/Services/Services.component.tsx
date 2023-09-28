@@ -8,7 +8,7 @@ export const Services = ({ heading, servicesCollection }: ServicesProps) => {
       <h2>{heading}</h2>
       <div className='servicesContainer'>
         {items.map(({ title, url }) => (
-          <Link className='service' href={url}>
+          <Link key={title} className='service' href={url}>
             {title}
           </Link>
         ))}

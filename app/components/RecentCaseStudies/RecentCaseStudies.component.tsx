@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { SwiperElement } from '../SwiperElement';
+import { title } from 'process';
 
 export const RecentCaseStudies = ({ heading, caseStudiesCollection }: RecentCaseStudiesProps) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -29,7 +30,7 @@ export const RecentCaseStudies = ({ heading, caseStudiesCollection }: RecentCase
           className='mySwiper'
         >
           {items.map((item) => (
-            <SwiperElement item={item} />
+            <SwiperElement key={item.title} item={item} />
           ))}
         </Swiper>
       </>
