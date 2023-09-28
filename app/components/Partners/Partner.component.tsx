@@ -1,37 +1,9 @@
 import { log } from 'console';
 import Image from 'next/image';
 import { PartnerCard } from '../PartnerCard';
+import { Partners as PartnersProps } from '@/lib/api';
 
-type Partner = {
-  title: string;
-  description: string;
-  logo: {
-    url: string;
-    fileName: string;
-    width: number;
-    height: number;
-  };
-  color: boolean;
-  background: {
-    url: string;
-    fileName: string;
-    width: number;
-    height: number;
-  };
-};
-
-type Partners = {
-  heading: string;
-  partnersCollection: {
-    items: Partner[];
-  };
-};
-type PartnersProps = {
-  data: Partners;
-};
-
-export const Partners = ({ data }: PartnersProps) => {
-  const { heading, partnersCollection } = data;
+export const Partners = ({ heading, partnersCollection }: PartnersProps) => {
   const { items } = partnersCollection;
   return (
     <section className='container heading partners' data-aos='fade-in'>

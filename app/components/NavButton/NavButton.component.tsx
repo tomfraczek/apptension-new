@@ -14,8 +14,8 @@ export const NavButton = ({ title, url }: NavButtonProps) => {
     <div key={title} className='menuItem' onMouseEnter={() => setWidth(100)} onMouseLeave={() => setWidth(0)}>
       <Link href={url} className='nav-item'>
         {title}
+        {title !== 'Get in touch' && <div className='border' style={{ width: `${width}%` }} />}
       </Link>
-      {title !== 'Get in touch' && <div className='border' style={{ width: `${width}%` }} />}
     </div>
   );
 };

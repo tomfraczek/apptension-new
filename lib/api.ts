@@ -1,55 +1,44 @@
 export type HomepageData = {
   pageTitle: string;
-  hero: {
-    title: string;
-    description: string;
-    image: {
-      title: string;
-      url: string;
-      width: number;
-      height: number;
-    };
-    imageBackground: {
-      title: string;
-      url: string;
-      width: number;
-      height: number;
-    };
-    cta: {
-      title: string;
-      url: string;
-    };
-  };
-  partners: {
-    heading: string;
-    partnersCollection: {
-      items: Partner[];
-    };
-  };
-  services: {
-    heading: string;
-    servicesCollection: {
-      items: Service[];
-    };
-  };
-  recentCaseStudies: {
-    heading: string;
-    caseStudiesCollection: {
-      items: CaseStudy[];
-    };
-  };
+  hero: Hero;
+  partners: Partners;
+  services: Services;
+  recentCaseStudies: RecentCaseStudies;
   techRadar: TechRadar;
-  whyUs: {
-    heading: string;
-    whyUsCollection: {
-      items: WhyUsItem[];
-    };
-  };
+  whyUs: WhyUs;
   sayAboutUs: {
     heading: string;
     sayAboutUsCollection: {
       items: SayAboutUsItem[];
     };
+  };
+};
+
+export type Hero = {
+  title: string;
+  description: string;
+  image: {
+    title: string;
+    url: string;
+    width: number;
+    height: number;
+  };
+  imageBackground: {
+    title: string;
+    url: string;
+    width: number;
+    height: number;
+  };
+  cta: {
+    title: string;
+    url: string;
+  };
+};
+
+export type Partners = {
+  heading: string;
+  partnersCollection: {
+    items: Partner[];
   };
 };
 
@@ -71,9 +60,23 @@ export type Partner = {
   };
 };
 
+export type Services = {
+  heading: string;
+  servicesCollection: {
+    items: Service[];
+  };
+};
+
 export type Service = {
   title: string;
   url: string;
+};
+
+export type RecentCaseStudies = {
+  heading: string;
+  caseStudiesCollection: {
+    items: CaseStudy[];
+  };
 };
 
 export type CaseStudy = {
@@ -105,6 +108,13 @@ export type TechRadar = {
   videoMobile: {
     title: string;
     url: string;
+  };
+};
+
+export type WhyUs = {
+  heading: string;
+  whyUsCollection: {
+    items: WhyUsItem[];
   };
 };
 

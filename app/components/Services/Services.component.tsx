@@ -1,23 +1,7 @@
 import Link from 'next/link';
+import { Services as ServicesProps } from '@/lib/api';
 
-type Service = {
-  title: string;
-  url: string;
-};
-
-type Services = {
-  heading: string;
-  servicesCollection: {
-    items: Service[];
-  };
-};
-
-type ServicesProps = {
-  data: Services;
-};
-
-export const Services = ({ data }: ServicesProps) => {
-  const { heading, servicesCollection } = data;
+export const Services = ({ heading, servicesCollection }: ServicesProps) => {
   const { items } = servicesCollection;
   return (
     <section className='container services heading' data-aos='fade-in'>

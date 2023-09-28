@@ -1,34 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Hero as HeroProps } from '@/lib/api';
 
-type HeroData = {
-  title: string;
-  description: string;
-  image: {
-    title: string;
-    url: string;
-    width: number;
-    height: number;
-  };
-  imageBackground: {
-    title: string;
-    url: string;
-    width: number;
-    height: number;
-  };
-  cta: {
-    title: string;
-    url: string;
-  };
-};
-
-type HeroProps = {
-  data: HeroData;
-};
-
-export const Hero = ({ data }: HeroProps) => {
-  const { title, description, image, imageBackground, cta } = data;
-
+export const Hero = ({ title, description, image, imageBackground, cta }: HeroProps) => {
   return (
     <section data-aos='fade-in' className='heroContainer'>
       <div className='container'>

@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { RecentCaseStudies as RecentCaseStudiesProps } from '@/lib/api';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,35 +11,8 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { SwiperElement } from '../SwiperElement';
 
-type CaseStudy = {
-  title: string;
-  description: string;
-  image: {
-    fileName: string;
-    url: string;
-    width: number;
-    height: number;
-  };
-  video: {
-    fileName: string;
-    url: string;
-  };
-};
-
-type CaseStudies = {
-  heading: string;
-  caseStudiesCollection: {
-    items: CaseStudy[];
-  };
-};
-
-type RecemtCaseStudiesProps = {
-  data: CaseStudies;
-};
-
-export const RecentCaseStudies = ({ data }: RecemtCaseStudiesProps) => {
+export const RecentCaseStudies = ({ heading, caseStudiesCollection }: RecentCaseStudiesProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const { heading, caseStudiesCollection } = data;
   const { items } = caseStudiesCollection;
 
   return (

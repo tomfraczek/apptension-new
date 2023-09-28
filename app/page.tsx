@@ -5,6 +5,7 @@ import { Partners } from '@/app/components/Partners';
 import { Services } from '@/app/components/Services';
 import { RecentCaseStudies } from '@/app/components/RecentCaseStudies';
 import { TechRadar } from '@/app/components/TechRadar';
+import { WhyUs } from './components/WhyUs';
 
 export default async function Page() {
   const { isEnabled } = draftMode();
@@ -13,11 +14,12 @@ export default async function Page() {
 
   return (
     <>
-      <Hero data={hero} />
-      <Partners data={partners} />
-      <Services data={services} />
-      <RecentCaseStudies data={recentCaseStudies} />
+      <Hero {...hero} />
+      <Partners {...partners} />
+      <Services {...services} />
+      <RecentCaseStudies {...recentCaseStudies} />
       <TechRadar {...techRadar} />
+      <WhyUs {...whyUs} />
     </>
   );
 }
