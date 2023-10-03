@@ -59,6 +59,7 @@ export const PartnerCard = ({ title, description, logo, background, color }: Par
       >
         {background?.url ? (
           <Image
+            loading='eager'
             className='background'
             src={background.url}
             width={background.width}

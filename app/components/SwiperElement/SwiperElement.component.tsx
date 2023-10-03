@@ -8,9 +8,6 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// import required modules
-import { Pagination } from 'swiper/modules';
-
 type Item = {
   title: string;
   description: string;
@@ -32,7 +29,6 @@ type SwiperElementProps = {
 
 export const SwiperElement = ({ item }: SwiperElementProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const { title, description, image, video } = item;
 
   const handleMouseEnter = () => {
@@ -47,7 +43,14 @@ export const SwiperElement = ({ item }: SwiperElementProps) => {
     <SwiperSlide key={title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link href='https://www.apptension.com/portfolio'>
         <div className='swiperContainer'>
-          <Image src={image.url} width={image.width} height={image.height} alt={image.fileName} unoptimized={true} />
+          <Image
+            loading='eager'
+            src={image.url}
+            width={image.width}
+            height={image.height}
+            alt={image.fileName}
+            unoptimized={true}
+          />
           {/* <video
                         ref={videoRef}
                         src={video.url}
