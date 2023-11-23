@@ -14,12 +14,16 @@ export default async function Page() {
 
   return (
     <>
-      <Hero {...hero} />
-      <Partners {...partners} />
-      <Services {...services} />
-      <RecentCaseStudies {...recentCaseStudies} />
-      <TechRadar {...techRadar} />
-      <WhyUs {...whyUs} />
+      {homepage && (
+        <>
+          <Hero {...hero} />
+          <Partners {...partners} />
+          <Services {...services} />
+          <RecentCaseStudies {...recentCaseStudies} />
+          <TechRadar {...techRadar} />
+          <WhyUs {...whyUs} />
+        </>
+      )}
     </>
   );
 }
