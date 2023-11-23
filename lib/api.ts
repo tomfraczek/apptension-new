@@ -137,90 +137,122 @@ export type SayAboutUsItem = {
 
 const Homepage = `
   {
-  homepage(id: "1WdHdBja7O8iulUQTIpsMJ") {
-    topSection{
-      sectionTitle
-      content{
-        json
-      }
-      icon{
+    homepage(id:"54VpAtNixKkrfPNeTzTh6D"){
+      pageTitle
+      hero{
         title
         description
-        width
-        height
-        url
+        image{
+          title
+          url
+              width
+              height
+        }
+        imageBackground{
+          title
+          url
+              width
+              height
+        }
+        cta{
+          title
+          url
+        }
       }
-      image{
+      partners{
+        heading
+        partnersCollection{
+          items{
+            title
+            description
+            logo{
+              url
+              fileName
+              width
+              height
+            }
+            color
+            background{
+              url
+              fileName
+              width
+              height
+            }
+          }
+          
+        }
+      }
+      services{
+        heading
+        servicesCollection{
+          items{
+            title
+            url
+          }
+        }
+      }
+      recentCaseStudies{
+        heading
+        caseStudiesCollection{
+          items{
+            title
+            description
+            image{
+              fileName
+              url
+              width
+              height
+            }
+            video{
+              fileName
+              url
+            }
+          }
+        }
+      }
+      techRadar{
         title
         description
-        width
-        height
-        url
+        cta{
+          title
+          url
+        }
+        video{
+          fileName
+          url
+        }
+        videoMobile{
+          title
+          url
+        }
       }
-      imagePosition
-      addReviewCards
-      backgroundColour
-    }
-    middleSection{
-      sectionTitle
-      content{
-        json
+      whyUs{
+        heading
+        whyUsCollection{
+          items{
+            title
+            description
+          }
+        }
       }
-      icon{
-        title
-        description
-        width
-        height
-        url
+      sayAboutUs{
+        heading
+        sayAboutUsCollection{
+          items{
+            name
+            description
+            jobTitle
+            image{
+              fileName
+              url
+              width
+              height
+            }
+          }
+        }
       }
-      image{
-        title
-        description
-        width
-        height
-        url
-      }
-      imagePosition
-      addReviewCards
-      backgroundColour
-    }
-    fullWidthBar{
-      category
-      title
-      image{
-        title
-        description
-        width
-        height
-        url
-      }
-      url
-    }
-    bottomSection{
-      sectionTitle
-      content{
-        json
-      }
-      icon{
-        title
-        description
-        width
-        height
-        url
-      }
-      image{
-        title
-        description
-        width
-        height
-        url
-      }
-      imagePosition
-      addReviewCards
-      backgroundColour
     }
   }
-}
 `;
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
