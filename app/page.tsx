@@ -10,7 +10,8 @@ import { WhyUs } from './components/WhyUs';
 export default async function Page() {
   const { isEnabled } = draftMode();
   const homepage = await getHomepage(isEnabled);
-  const { services, hero, whyUs, techRadar, partners, recentCaseStudies, sayAboutUs } = homepage;
+  const { services, hero, whyUs, techRadar, partners, recentCaseStudies, sayAboutUs } = homepage || {};
+  console.log(homepage);
 
   return (
     <>
