@@ -6,20 +6,22 @@ import { Services } from '@/app/components/Services';
 import { RecentCaseStudies } from '@/app/components/RecentCaseStudies';
 import { TechRadar } from '@/app/components/TechRadar';
 import { WhyUs } from './components/WhyUs';
+import { Foo } from './components/foo.js';
 
 export default async function Page() {
   const { isEnabled } = draftMode();
   const homepage = await getHomepage(isEnabled);
-  const { services, hero, whyUs, techRadar, partners, recentCaseStudies, sayAboutUs } = homepage;
-
+  // const { services, hero, whyUs, techRadar, partners, recentCaseStudies, sayAboutUs } = homepage;
   return (
     <>
-      <Hero {...hero} />
+      {/* @ts-ignore: Unreachable code error */}
+      <Foo data={homepage} />
+      {/* <Hero {...hero} />
       <Partners {...partners} />
       <Services {...services} />
       <RecentCaseStudies {...recentCaseStudies} />
       <TechRadar {...techRadar} />
-      <WhyUs {...whyUs} />
+      <WhyUs {...whyUs} /> */}
     </>
   );
 }
